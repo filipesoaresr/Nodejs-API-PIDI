@@ -14,7 +14,7 @@ module.exports = {
     },
     
     async store(request, response) {
-        const {productType, name, colection, pp, p, m, g, gg, dateCreated} = request.body;
+        const {productType, name, colection, pp, p, m, g, gg, dateCreated, value} = request.body;
 
         if(!name || !productType) {
             return response.status(400).json({ error: "Missing fields..."})
@@ -30,9 +30,10 @@ module.exports = {
             p,
             m,
             g,
-            gg
+            gg,
+            value
         })
-
+        
         try {
             await product.save();
 

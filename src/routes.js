@@ -1,12 +1,12 @@
 const express = require('express');
 const routes = express.Router();
 
-const ProductController = require("./controllers/ProductController");
 const ProductMiddleware = require("./middlewares/ProductMiddleware");
 
+const ProductController = require("./controllers/ProductController");
 const UserController = require("./controllers/UserController");
-
 const PaymentOptionsController = require("./controllers/PaymentOptionsController");
+const PromotionsController = require("./controllers/PromotionController");
 
 //Produtos
 routes.get("/products", ProductController.index);
@@ -25,6 +25,14 @@ routes.get("/payment-options", PaymentOptionsController.index);
 routes.post("/payment-options", PaymentOptionsController.store);
 routes.put("/payment-options/:id", PaymentOptionsController.update);
 routes.delete("/payment-options/:id", PaymentOptionsController.delete);
+
+//Promoions
+routes.get("/promotions", PromotionsController.index);
+routes.post("/promotions", PromotionsController.store);
+routes.put("/promotions/:id", PromotionsController.update);
+routes.delete("/promotions/:id", PromotionsController.delete);
+
+
 
 module.exports = routes;
 

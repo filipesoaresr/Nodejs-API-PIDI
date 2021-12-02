@@ -26,21 +26,35 @@ const productSchema = new mongoose.Schema({
     pp: {
         type: Number,
         default: 0,
+        required: false,
     },
     p: {
         type: Number,
         default: 0,
+        required: false,
     },
     m: {
         type: Number,
         default: 0,
+        required: false,
     },
     g: {
         type: Number,
         default: 0,
+        required: false,
     },
     gg: {
         type: Number,
+        default: 0,
+        required: false,
+    },
+    promotion: {
+        type: String,
+        default: "Nenhuma"
+    },
+    value: {
+        type: Number,
+        required: true,
         default: 0,
     }
 });
